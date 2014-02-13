@@ -52,37 +52,36 @@ public class AdditionApplet extends JApplet
   
      
    //calculate largest number
-  private static void largestNumber (Double largest){
-      largest = Math.max(number1, Math.max(number2, number3));
+  private double largestNumber (){
+      return largest = Math.max(number1, Math.max(number2, number3));
   }
   // calculate smallest number
-  private static void smallestNumber (Double smallest){
-      smallest = Math.min(number1, Math.min(number2, number3));
+  public double smallestNumber (){
+     return smallest = Math.min(number1, Math.min(number2, number3));
   }
   //calculate median number
-  private static void medianNumbers(Double median) {
-     median = sum-largest-smallest;
+  private double medianNumbers() {
+    return median = sum-largest-smallest;
   }
   
-
+  String small = String.format(".2f", smallestNumber());
    // draw results in a rectangle on applet’s background
    public void paint( Graphics g )
    {
       super.paint( g ); // call superclass version of method paint
-
-      g.drawRect( 15, 10, 325, 200 );
+      setSize(350, 225); //sets size of applet
+ 
+      g.drawRect( 15, 10, 325, 200 ); // draws line box around calculations
       
-      String display = String.format("%.2d, %.2d,%.2d",number1,number2,number3"
+      //String display = String.format("%.2d, %.2d,%.2d",number1,number2,number3"
       // draw results as a String
-       // g.drawString(display, 25, 25);
-        g.drawString("The sum is " + sum, 25, 25 );
-        g.drawString(display,25, 45);
-        g.drawString("The smallest is "+smallest, 25, 65);
-        g.drawString("The median is "+median, 25, 85);    
-        g.drawString("The range is "+range, 25, 105);
-        g.drawString("Product is "+product, 25, 145);
-        g.drawString("Average is "+average, 25, 165);
-        g.drawString("\nQuotient of the largest divided"
-               + " by the smallest is "+quotient+".", 25, 185);
+      g.drawString("The sum is " + sum, 25, 25 );
+      g.drawString(small, 25, 65);
+        //g.drawString("The median is "+median 25, 85);    
+      g.drawString("The range is "+range, 25, 105);
+      g.drawString("Product is "+product, 25, 145);
+      g.drawString("Average is "+average, 25, 165);
+      g.drawString("\nQuotient of the largest divided"
+            + " by the smallest is "+quotient+".", 25, 185);
    } // end method paint
 } // end class AdditionApplet
