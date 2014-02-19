@@ -1,5 +1,3 @@
-package additionapplet;
-
 import java.awt.Graphics;       // program uses class Graphics
 import java.text.DecimalFormat;
 import javax.swing.JApplet;     // program uses class JApplet
@@ -71,7 +69,7 @@ public class AdditionApplet extends JApplet
    public void paint( Graphics g )
    {
       super.paint( g ); // call superclass version of method paint
-       setSize(350, 225); //set size of Applet window
+      setSize(350, 225); //set size of Applet window
       g.drawRect( 15, 10, 325, 200 );//draws line box around wording
       
       String display = String.format("The numbers entered are %.2f, %.2f,%.2f",
